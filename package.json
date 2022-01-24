@@ -1,5 +1,5 @@
 {
-  "name": "@david.kucsai/react-pdf-table",
+  "name": "@alex9923/react-pdf-table",
   "version": "0.3.0",
   "description": "Provides tables for the @react-pdf/renderer.",
   "main": "./lib/index.js",
@@ -73,7 +73,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dmk99/react-pdf-table.git"
+    "url": "git+https://github.com/alex9923/react-pdf-table.git"
   },
   "bugs": {
     "url": "https://github.com/dmk99/react-pdf-table/issues"
