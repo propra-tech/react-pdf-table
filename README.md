@@ -1,20 +1,15 @@
-# @david.kucsai/react-pdf-table
+# @alex9923/react-pdf-table
 
 This library is designed to be used with [@react-pdf/renderer](https://www.npmjs.com/package/@react-pdf/renderer).
 
 The goal behind this library is to provide a declarative way of defining tables in a PDF.
 
-[![npm version](http://img.shields.io/npm/v/@david.kucsai/react-pdf-table.svg?style=flat)](https://npmjs.org/package/@david.kucsai/react-pdf-table "View this project on npm")
+[![npm version](http://img.shields.io/npm/v/@alex9923/react-pdf-table.svg?style=flat)](https://npmjs.org/package/@alex9923/react-pdf-table "View this project on npm")
 
 To get started run:
 
 ```
- npm install "@david.kucsai/react-pdf-table"
- ```
- 
- On Windows you must escape the '.':
- ```
- npm install "@david`.kucsai/react-pdf-table"
+ npm install "@alex9923/react-pdf-table"
  ```
  
 
