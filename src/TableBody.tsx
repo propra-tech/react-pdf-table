@@ -1,11 +1,12 @@
-import {TableRow, TableRowProps} from "./TableRow";
+import { TableRow, TableRowProps } from "./TableRow";
 import * as React from "react";
-import {getDefaultBorderIncludes} from "./Utils";
+import { getDefaultBorderIncludes } from "./Utils";
 
 export interface TableBodyProps extends TableRowProps {
     /**
      * The data associated with the table.
      */
+    children: any;
     data?: any[];
     zebra?: boolean;
 }
@@ -14,7 +15,8 @@ export interface TableBodyProps extends TableRowProps {
 // thus allowing us to render it in the event that no
 // header rows were present in the table.
 interface InternalBodyProps extends TableBodyProps {
-    renderTopBorder?: boolean
+    renderTopBorder?: boolean;
+    children: any;
 }
 
 /**
@@ -23,7 +25,7 @@ interface InternalBodyProps extends TableBodyProps {
 export class TableBody extends React.PureComponent<InternalBodyProps> {
     render() {
         const rowCells: any[] = React.Children.toArray(this.props.children);
-        const {includeLeftBorder, includeBottomBorder, includeRightBorder} = getDefaultBorderIncludes(this.props);
+        const { includeLeftBorder, includeBottomBorder, includeRightBorder } = getDefaultBorderIncludes(this.props);
         const dataRows = this.props.data ?? [];
 
         return (
@@ -31,7 +33,7 @@ export class TableBody extends React.PureComponent<InternalBodyProps> {
                 <TableRow
                     {...this.props}
                     key={rowIndex}
-                    even={rowIndex%2===0}
+                    even={rowIndex % 2 === 0}
                     data={data}
                     includeLeftBorder={includeLeftBorder}
                     includeBottomBorder={includeBottomBorder}

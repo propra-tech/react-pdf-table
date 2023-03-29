@@ -1,8 +1,9 @@
 import * as React from "react";
-import {getDefaultBorderIncludes} from "./Utils";
-import {TableRow, TableRowProps} from "./TableRow";
+import { getDefaultBorderIncludes } from "./Utils";
+import { TableRow, TableRowProps } from "./TableRow";
 
 interface TableHeaderProps extends TableRowProps {
+    children: any;
 }
 
 /**
@@ -10,7 +11,7 @@ interface TableHeaderProps extends TableRowProps {
  */
 export class TableHeader extends React.PureComponent<TableHeaderProps> {
     render() {
-        let {includeLeftBorder, includeBottomBorder, includeRightBorder, includeTopBorder} = getDefaultBorderIncludes(this.props);
+        let { includeLeftBorder, includeBottomBorder, includeRightBorder, includeTopBorder } = getDefaultBorderIncludes(this.props);
 
         const rowCells: any[] = React.Children.toArray(this.props.children);
 

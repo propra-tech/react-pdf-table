@@ -1,7 +1,9 @@
 import * as React from "react";
-import ReactPDF, {Text, View} from "@react-pdf/renderer";
-import {getDefaultBorderIncludes, transformToArray} from "./Utils";
-
+import ReactPDF, { Text, View } from "@react-pdf/renderer";
+import { getDefaultBorderIncludes, transformToArray } from "./Utils";
+import {
+    Style
+} from '@react-pdf/types';
 /**
  * Whether to include borders or not.
  * Depending on the context some toggles will not have any effect.
@@ -38,7 +40,7 @@ export interface TableCellProps extends TableBorder {
     /**
      * Extra styling to apply. These will override existing style with the same key.
      */
-    style?: ReactPDF.Style | ReactPDF.Style[];
+    style?: Style | Style[];
 
     /**
      * How to align the text
@@ -54,6 +56,7 @@ export interface TableCellProps extends TableBorder {
      * The font-size to apply to the cell.
      */
     fontSize?: number | string;
+    children: any;
 }
 
 /**
@@ -67,7 +70,7 @@ export class TableCell extends React.PureComponent<TableCellProps> {
             content = (
                 <Text>{this.props.children}</Text>
             );
-        } else if(typeof this.props.children === "number") {
+        } else if (typeof this.props.children === "number") {
             content = (
                 <Text>{this.props.children.toString()}</Text>
             );
@@ -75,8 +78,8 @@ export class TableCell extends React.PureComponent<TableCellProps> {
             content = this.props.children;
         }
 
-        const {includeRightBorder} = getDefaultBorderIncludes(this.props);
-        const defaultStyle: ReactPDF.Style = {
+        const { includeRightBorder } = getDefaultBorderIncludes(this.props);
+        const defaultStyle: Style = {
             flex: this.props.weighting ?? 1,
             // @ts-ignore
             justifyContent: "stretch",
@@ -87,7 +90,7 @@ export class TableCell extends React.PureComponent<TableCellProps> {
             whiteSpace: "pre-wrap"
         };
 
-        const mergedStyles: ReactPDF.Style[] = [
+        const mergedStyles: Style[] = [
             defaultStyle,
             ...transformToArray(this.props.style)
         ];

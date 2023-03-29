@@ -1,13 +1,14 @@
 import * as React from "react";
-import {TableHeader} from "./TableHeader";
-import {TableBody} from "./TableBody";
-import {View} from "@react-pdf/renderer";
+import { TableHeader } from "./TableHeader";
+import { TableBody } from "./TableBody";
+import { View } from "@react-pdf/renderer";
 
 interface TableProps {
     data?: any[];
     zebra?: boolean;
     evenRowColor?: string;
     oddRowColor?: string;
+    children: any;
 }
 
 export class Table extends React.PureComponent<TableProps> {
