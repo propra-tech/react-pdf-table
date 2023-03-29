@@ -1,6 +1,6 @@
 {
   "name": "@alex9923/react-pdf-table",
-  "version": "0.4.3-beta",
+  "version": "0.4.4-beta",
   "description": "Provides tables for the @react-pdf/renderer. But its updated to react version 18.2.0",
   "main": "./lib/index.js",
   "scripts": {
