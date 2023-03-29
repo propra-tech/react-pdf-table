@@ -56,7 +56,7 @@ export interface TableCellProps extends TableBorder {
      * The font-size to apply to the cell.
      */
     fontSize?: number | string;
-    children: any;
+    children?: any;
 }
 
 /**
