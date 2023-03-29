@@ -6,7 +6,7 @@ export interface TableBodyProps extends TableRowProps {
     /**
      * The data associated with the table.
      */
-    children: any;
+    children?: any;
     data?: any[];
     zebra?: boolean;
 }
@@ -16,7 +16,7 @@ export interface TableBodyProps extends TableRowProps {
 // header rows were present in the table.
 interface InternalBodyProps extends TableBodyProps {
     renderTopBorder?: boolean;
-    children: any;
+    children?: any;
 }
 
 /**

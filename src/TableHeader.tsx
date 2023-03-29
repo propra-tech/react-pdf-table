@@ -3,7 +3,7 @@ import { getDefaultBorderIncludes } from "./Utils";
 import { TableRow, TableRowProps } from "./TableRow";
 
 interface TableHeaderProps extends TableRowProps {
-    children: any;
+    children?: any;
 }
 
 /**

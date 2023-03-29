@@ -4,7 +4,7 @@ interface TableProps {
     zebra?: boolean;
     evenRowColor?: string;
     oddRowColor?: string;
-    children: any;
+    children?: any;
 }
 export declare class Table extends React.PureComponent<TableProps> {
     render(): JSX.Element;

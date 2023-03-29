@@ -8,7 +8,7 @@ interface TableProps {
     zebra?: boolean;
     evenRowColor?: string;
     oddRowColor?: string;
-    children: any;
+    children?: any;
 }
 
 export class Table extends React.PureComponent<TableProps> {
