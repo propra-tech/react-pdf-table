@@ -23,8 +23,25 @@ jobs:
       with:
         version: latest
 
-    - id: build-publish
-      uses: bitovi/github-actions-react-to-ghp@v1.2.0
-      with:
+    - name: Checkout if required
+      if: ${{ inputs.checkout == 'true' }}
+      uses: actions/checkout@v3
+
+    - name: build
+      shell: bash
+      run: |
+        echo "::group::Build"
+        pnpm ci
+        pnpm build-storybook
+        echo "::endgroup::"
+
+    - name: upload
+      uses: actions/upload-pages-artifact@v1.0.4
+      with: 
         path: storybook-static
-        build_command: pnpm build-storybook
+
+    - id: deploy
+      name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v1
+      with:
+        token: ${{ github.token }}
