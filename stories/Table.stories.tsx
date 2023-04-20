@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { Document, PDFViewer, Page } from '@react-pdf/renderer';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { DataTableCell, DataTableCellProps, Table, TableBody, TableCell, TableHeader, TableProps } from '../src';
+import { DataTableCell, DataTableCellProps, Table, TableBody, TableBodyProps, TableCell, TableHeader, TableProps } from '../src';
 
 const pageSize = ['A2', 'A3', 'A4', 'A5', 'A6', 'LEGAL', 'LETTER', 'TABLOID'];
 
@@ -14,7 +14,8 @@ type MetaProps = TableProps & {
   secondColumnWeighting: number;
   fontSize: number;
   textAlign: 'left' | 'center' | 'right';
-};
+  showHeader: boolean;
+} & Pick<TableBodyProps, 'includeTopBorder' | 'includeBottomBorder' | 'includeLeftBorder' | 'includeRightBorder'>;
 type Story = StoryObj<MetaProps>;
 
 const Template = ({
@@ -25,31 +26,48 @@ const Template = ({
   textAlign,
   firstColumnWeighting,
   secondColumnWeighting,
+  includeTopBorder,
+  includeBottomBorder,
+  includeLeftBorder,
+  includeRightBorder,
+  showHeader = true,
   ...args
-}: MetaProps) => (
-  <PDFViewer style={{ width: '100%', height: '90vh' }}>
-    <Document>
-      <Page orientation={orientation} size={pageSize ?? 'A4'} style={{ margin: 20, paddingRight: 40 }}>
-        <Table {...args}>
-          <TableHeader {...{ textAlign, fontSize }}>
-            <TableCell weighting={firstColumnWeighting}>First Name</TableCell>
-            <TableCell weighting={secondColumnWeighting}>Last Name</TableCell>
-            <TableCell>DOB</TableCell>
-            <TableCell>Country</TableCell>
-            <TableCell>Phone Number</TableCell>
-          </TableHeader>
-          <TableBody {...{ textAlign, fontSize }}>
-            <DataTableCell weighting={firstColumnWeighting} getContent={(r) => r.firstName} />
-            <DataTableCell weighting={secondColumnWeighting} getContent={(r) => r.lastName} />
-            <DataTableCell getContent={(r) => r.dob} />
-            <DataTableCell getContent={(r) => r.country} />
-            <DataTableCell getContent={getLastContent} />
-          </TableBody>
-        </Table>
-      </Page>
-    </Document>
-  </PDFViewer>
-);
+}: MetaProps) => {
+  const bodyProps = {
+    fontSize,
+    textAlign,
+    includeTopBorder,
+    includeBottomBorder,
+    includeLeftBorder,
+    includeRightBorder,
+  };
+  return (
+    <PDFViewer style={{ width: '100%', height: '90vh' }}>
+      <Document>
+        <Page orientation={orientation} size={pageSize ?? 'A4'} style={{ margin: 20, paddingRight: 40 }}>
+          <Table {...args}>
+            {showHeader && (
+              <TableHeader {...bodyProps}>
+                <TableCell weighting={firstColumnWeighting}>First Name</TableCell>
+                <TableCell weighting={secondColumnWeighting}>Last Name</TableCell>
+                <TableCell>DOB</TableCell>
+                <TableCell>Country</TableCell>
+                <TableCell>Phone Number</TableCell>
+              </TableHeader>
+            )}
+            <TableBody {...bodyProps}>
+              <DataTableCell weighting={firstColumnWeighting} getContent={(r) => r.firstName} />
+              <DataTableCell weighting={secondColumnWeighting} getContent={(r) => r.lastName} />
+              <DataTableCell getContent={(r) => r.dob} />
+              <DataTableCell getContent={(r) => r.country} />
+              <DataTableCell getContent={getLastContent} />
+            </TableBody>
+          </Table>
+        </Page>
+      </Document>
+    </PDFViewer>
+  );
+};
 
 const meta: Meta = {
   title: 'Table',
@@ -159,5 +177,39 @@ SimpleTableWithWeighting.parameters = {
   controls: {
     expanded: true,
     include: ['pageSize', 'orientation', 'firstColumnWeighting', 'secondColumnWeighting'],
+  },
+};
+
+export const TableWithoutBorder: Story = Template.bind({});
+TableWithoutBorder.args = {
+  data: Array(20)
+    .fill(0)
+    .map(() => ({
+      firstName: faker.name.firstName(),
+      lastName: faker.name.lastName(),
+      dob: faker.date.past(100).toISOString().substring(0, 10),
+      country: faker.address.country(),
+      city: faker.address.city(),
+      phoneNumber: faker.phone.number(),
+    })),
+  getLastContent: (r) => r.phoneNumber,
+  showHeader: false,
+  includeTopBorder: false,
+  includeBottomBorder: false,
+  includeLeftBorder: false,
+  includeRightBorder: false,
+};
+TableWithoutBorder.parameters = {
+  controls: {
+    expanded: true,
+    include: [
+      'pageSize',
+      'orientation',
+      'showHeader',
+      'includeTopBorder',
+      'includeBottomBorder',
+      'includeLeftBorder',
+      'includeRightBorder',
+    ],
   },
 };
