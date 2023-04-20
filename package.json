@@ -1,5 +1,5 @@
 {
-  "name": "@propra-tech/react-pdf-table",
+  "name": "@propra/react-pdf-table",
   "version": "1.0.0",
   "description": "Provides tables for the @react-pdf/renderer.",
   "main": "./lib/index.js",
