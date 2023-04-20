@@ -35,7 +35,7 @@ jobs:
     - name: build
       shell: bash
       run: |
-        pnpm install --frozen-lockfile=false
+        pnpm install
         pnpm build-storybook
 
     - name: upload
