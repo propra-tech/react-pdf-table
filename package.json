@@ -1,18 +1,21 @@
 {
-  "name": "@alex9923/react-pdf-table",
-  "version": "0.4.4-beta",
-  "description": "Provides tables for the @react-pdf/renderer. But its updated to react version 18.2.0",
+  "name": "@propra-tech/react-pdf-table",
+  "version": "1.0.0",
+  "description": "Provides tables for the @react-pdf/renderer.",
   "main": "./lib/index.js",
   "scripts": {
     "generate-barrels": "barrelsby -d src --delete -e TableRow.tsx",
-    "build": "npm run generate-barrels && tsc",
+    "build": "pnpm run generate-barrels && tsc",
     "recompile": "tsc",
-    "prepublish": "npm run build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs",
-    "build-doco": "typedoc --plugin typedoc-plugin-markdown --out docs/typedoc --mode modules src"
+    "prepublish": "pnpm build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build-doco": "typedoc --plugin typedoc-plugin-markdown --out docs/typedoc src"
   },
-  "author": "David Kucsai",
+  "authors": [
+    "David Kucsai",
+    "Propra Technologies Inc."
+  ],
   "license": "MIT",
   "peerDependencies": {
     "@react-pdf/renderer": "^3.1.9",
@@ -20,43 +23,53 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.4",
+    "@faker-js/faker": "^7.6.0",
     "@react-pdf/renderer": "^3.1.9",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-knobs": "^5.3.7",
-    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addon-actions": "^7.0.6",
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-interactions": "^7.0.6",
+    "@storybook/addon-links": "^7.0.6",
     "@storybook/addon-options": "^5.3.21",
-    "@storybook/addon-storysource": "^6.5.16",
-    "@storybook/addons": "^6.5.16",
-    "@storybook/cli": "^6.5.16",
-    "@storybook/react": "^6.5.16",
+    "@storybook/addons": "^7.0.6",
+    "@storybook/blocks": "^7.0.6",
+    "@storybook/cli": "^7.0.6",
+    "@storybook/react": "^7.0.6",
+    "@storybook/react-webpack5": "^7.0.6",
+    "@storybook/source-loader": "^7.0.6",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@types/enzyme": "^3.10.12",
     "@types/faker": "^6.6.8",
     "@types/node": "^18.15.11",
+    "@types/react": "^18.0.37",
     "@types/sinon": "^10.0.13",
     "@types/storybook__react": "^5.2.1",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^29.5.0",
     "babel-loader": "^9.1.2",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "barrelsby": "^2.5.1",
     "css-loader": "^6.7.3",
+    "env": "link:@babel/preset/env",
     "enzyme": "^3.11.0",
-    "faker": "^6.6.6",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "jsdom": "^21.1.1",
     "mini-css-extract-plugin": "^2.7.5",
+    "pnpm": "^8.3.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^18.2.0",
     "regenerator-runtime": "^0.13.11",
     "sinon": "^15.0.3",
+    "storybook": "^7.0.6",
+    "storybook-addon-faker": "^0.6.0",
     "ts-jest": "^29.0.5",
     "ts-loader": "^9.4.2",
-    "typedoc": "^0.23.28",
-    "typedoc-plugin-markdown": "^3.14.0",
+    "typedoc": "^0.24.4",
+    "typedoc-plugin-markdown": "^3.15.1",
     "typescript": "^5.0.2",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
@@ -72,14 +85,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alex9923/react-pdf-table.git"
+    "url": "git+https://github.com/propra-tech/react-pdf-table.git"
   },
   "bugs": {
-    "url": "https://github.com/dmk99/react-pdf-table/issues"
+    "url": "https://github.com/propra-tech/react-pdf-table/issues"
   },
-  "homepage": "https://github.com/dmk99/react-pdf-table.git#README",
-  "types": "./lib/index.d.ts",
-  "dependencies": {
-    "@storybook/addon-postcss": "^2.0.0"
-  }
+  "homepage": "https://github.com/propra-tech/react-pdf-table.git#README",
+  "types": "./lib/index.d.ts"
 }

@@ -1,15 +1,13 @@
-import * as React from "react";
-import { TableBorder } from "./TableCell";
-import { TableBodyProps } from "./TableBody";
+import * as React from 'react';
+import { TableBodyProps } from './TableBody';
+import { TableBorder } from './TableCell';
 export interface TableRowProps extends TableBorder {
     fontSize?: number | string;
-    textAlign?: "left" | "center" | "right";
+    textAlign?: 'left' | 'center' | 'right';
     data?: any;
     zebra?: boolean;
     even?: boolean;
     evenRowColor?: string;
     oddRowColor?: string;
 }
-export declare class TableRow extends React.PureComponent<Partial<TableBodyProps>> {
-    render(): JSX.Element;
-}
+export declare const TableRow: React.FC<Partial<TableBodyProps>>;

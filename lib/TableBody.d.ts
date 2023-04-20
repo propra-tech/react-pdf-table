@@ -1,15 +1,11 @@
-import { TableRowProps } from "./TableRow";
-import * as React from "react";
-export interface TableBodyProps extends TableRowProps {
-    children?: any;
+import * as React from 'react';
+import { TableRowProps } from './TableRow';
+export interface TableBodyProps extends TableRowProps, React.PropsWithChildren {
     data?: any[];
     zebra?: boolean;
 }
 interface InternalBodyProps extends TableBodyProps {
     renderTopBorder?: boolean;
-    children?: any;
 }
-export declare class TableBody extends React.PureComponent<InternalBodyProps> {
-    render(): JSX.Element[];
-}
+export declare const TableBody: React.FC<InternalBodyProps>;
 export {};

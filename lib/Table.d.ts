@@ -1,12 +1,9 @@
-import * as React from "react";
-interface TableProps {
+import * as React from 'react';
+export interface TableProps {
     data?: any[];
     zebra?: boolean;
     evenRowColor?: string;
     oddRowColor?: string;
-    children?: any;
+    children?: React.ReactNode;
 }
-export declare class Table extends React.PureComponent<TableProps> {
-    render(): JSX.Element;
-}
-export {};
+export declare const Table: React.FC<TableProps>;

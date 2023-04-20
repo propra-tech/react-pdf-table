@@ -1,15 +1,15 @@
-# @alex9923/react-pdf-table
+# @propra-tech/react-pdf-table
 
-This library is designed to be used with [@react-pdf/renderer](https://www.npmjs.com/package/@react-pdf/renderer).
+This library is a fork of the excellent work by David Kucsai (`@dmk99`)and other contributors, designed to be used with [@react-pdf/renderer](https://www.npmjs.com/package/@react-pdf/renderer).
 
 The goal behind this library is to provide a declarative way of defining tables in a PDF.
 
-[![npm version](http://img.shields.io/npm/v/@alex9923/react-pdf-table.svg?style=flat)](https://npmjs.org/package/@alex9923/react-pdf-table "View this project on npm")
+[![npm version](http://img.shields.io/npm/v/@propra-tech/react-pdf-table.svg?style=flat)](https://npmjs.org/package/@propra-tech/react-pdf-table "View this project on npm")
 
 To get started run:
 
 ```
- npm install "@alex9923/react-pdf-table"
+ npm install "@propra-tech/react-pdf-table"
  ```
  
 

@@ -1,46 +1,44 @@
-import * as React from "react";
-import { TableHeader } from "./TableHeader";
-import { TableBody } from "./TableBody";
-import { View } from "@react-pdf/renderer";
+import { View } from '@react-pdf/renderer';
+import * as React from 'react';
+import { TableBody } from './TableBody';
+import { TableHeader } from './TableHeader';
 
-interface TableProps {
-    data?: any[];
-    zebra?: boolean;
-    evenRowColor?: string;
-    oddRowColor?: string;
-    children?: any;
+export interface TableProps {
+  data?: any[];
+  zebra?: boolean;
+  evenRowColor?: string;
+  oddRowColor?: string;
+  children?: React.ReactNode;
 }
 
-export class Table extends React.PureComponent<TableProps> {
-    render() {
-        let tableHeader: JSX.Element = null;
-        let tableBody: JSX.Element = null;
+export const Table: React.FC<TableProps> = (props) => {
+  let tableHeader: JSX.Element = null;
+  let tableBody: JSX.Element = null;
 
-        React.Children.forEach(this.props.children, (c: any) => {
-            if (c?.type === TableHeader) {
-                tableHeader = c;
-            } else if (c?.type === TableBody) {
-                tableBody = c;
-            }
-        });
-
-        tableBody = React.cloneElement(tableBody, {
-            data: tableBody.props.data ?? this.props.data ?? [],
-            renderTopBorder: !tableHeader,
-            zebra: tableBody.props.zebra ?? this.props.zebra ?? false,
-            evenRowColor: tableBody.props.evenRowColor ?? this.props.evenRowColor ?? '',
-            oddRowColor: tableBody.props.oddRowColor ?? this.props.oddRowColor ?? '',
-        });
-
-        return (
-            <View
-                style={{
-                    width: "100%",
-                }}
-            >
-                {tableHeader}
-                {tableBody}
-            </View>
-        );
+  React.Children.forEach(props.children, (c: any) => {
+    if (c?.type === TableHeader) {
+      tableHeader = c;
+    } else if (c?.type === TableBody) {
+      tableBody = c;
     }
-}
+  });
+
+  tableBody = React.cloneElement(tableBody, {
+    data: tableBody.props.data ?? props.data ?? [],
+    renderTopBorder: !tableHeader,
+    zebra: tableBody.props.zebra ?? props.zebra ?? false,
+    evenRowColor: tableBody.props.evenRowColor ?? props.evenRowColor ?? '',
+    oddRowColor: tableBody.props.oddRowColor ?? props.oddRowColor ?? '',
+  });
+
+  return (
+    <View
+      style={{
+        width: '100%',
+      }}
+    >
+      {tableHeader}
+      {tableBody}
+    </View>
+  );
+};

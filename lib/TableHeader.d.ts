@@ -1,9 +1,6 @@
-import * as React from "react";
-import { TableRowProps } from "./TableRow";
-interface TableHeaderProps extends TableRowProps {
-    children?: any;
+import * as React from 'react';
+import { TableRowProps } from './TableRow';
+interface TableHeaderProps extends TableRowProps, React.PropsWithChildren {
 }
-export declare class TableHeader extends React.PureComponent<TableHeaderProps> {
-    render(): JSX.Element;
-}
+export declare const TableHeader: React.FC<TableHeaderProps>;
 export {};
