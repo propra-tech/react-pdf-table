@@ -1,6 +1,6 @@
 {
   "name": "@propra/react-pdf-table",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides tables for the @react-pdf/renderer.",
   "main": "./lib/index.js",
   "scripts": {
