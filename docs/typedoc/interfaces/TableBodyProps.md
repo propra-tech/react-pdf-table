@@ -43,7 +43,7 @@ Omit.children
 
 #### Defined in
 
-[src/TableBody.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableBody.tsx#L13)
+[src/TableBody.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableBody.tsx#L13)
 
 ___
 
@@ -55,7 +55,7 @@ The data associated with the table.
 
 #### Defined in
 
-[src/TableBody.tsx:11](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableBody.tsx#L11)
+[src/TableBody.tsx:11](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableBody.tsx#L11)
 
 ___
 
@@ -71,7 +71,7 @@ Omit.even
 
 #### Defined in
 
-[src/TableRow.tsx:32](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableRow.tsx#L32)
+[src/TableRow.tsx:32](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableRow.tsx#L32)
 
 ___
 
@@ -87,7 +87,7 @@ Omit.evenRowColor
 
 #### Defined in
 
-[src/TableRow.tsx:37](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableRow.tsx#L37)
+[src/TableRow.tsx:37](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableRow.tsx#L37)
 
 ___
 
@@ -103,7 +103,7 @@ Omit.fontSize
 
 #### Defined in
 
-[src/TableRow.tsx:12](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableRow.tsx#L12)
+[src/TableRow.tsx:12](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableRow.tsx#L12)
 
 ___
 
@@ -119,7 +119,7 @@ Omit.includeBottomBorder
 
 #### Defined in
 
-[src/TableCell.tsx:23](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L23)
+[src/TableCell.tsx:23](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableCell.tsx#L23)
 
 ___
 
@@ -135,7 +135,7 @@ Omit.includeLeftBorder
 
 #### Defined in
 
-[src/TableCell.tsx:28](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L28)
+[src/TableCell.tsx:28](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableCell.tsx#L28)
 
 ___
 
@@ -151,7 +151,7 @@ Omit.includeRightBorder
 
 #### Defined in
 
-[src/TableCell.tsx:18](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L18)
+[src/TableCell.tsx:18](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableCell.tsx#L18)
 
 ___
 
@@ -167,7 +167,7 @@ Omit.includeTopBorder
 
 #### Defined in
 
-[src/TableCell.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L13)
+[src/TableCell.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableCell.tsx#L13)
 
 ___
 
@@ -183,7 +183,7 @@ Omit.oddRowColor
 
 #### Defined in
 
-[src/TableRow.tsx:42](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableRow.tsx#L42)
+[src/TableRow.tsx:42](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableRow.tsx#L42)
 
 ___
 
@@ -199,7 +199,7 @@ Omit.textAlign
 
 #### Defined in
 
-[src/TableRow.tsx:17](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableRow.tsx#L17)
+[src/TableRow.tsx:17](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableRow.tsx#L17)
 
 ___
 
@@ -213,4 +213,4 @@ Omit.zebra
 
 #### Defined in
 
-[src/TableBody.tsx:12](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableBody.tsx#L12)
+[src/TableBody.tsx:12](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableBody.tsx#L12)

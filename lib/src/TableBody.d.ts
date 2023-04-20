@@ -1,13 +1,14 @@
-import { TableRowProps } from "./TableRow";
-import * as React from "react";
-export interface TableBodyProps extends TableRowProps {
-    data?: any[];
+/// <reference types="react" />
+import { DataTableCellProps } from 'DataTableCell';
+import { TypedReactNode } from 'Types';
+import { TableRowProps } from './TableRow';
+export interface TableBodyProps<TData> extends Omit<TableRowProps<TData>, 'data'> {
+    data?: TData[];
     zebra?: boolean;
+    children?: TypedReactNode<DataTableCellProps<TData>>;
 }
-interface InternalBodyProps extends TableBodyProps {
+interface InternalBodyProps<TData> extends TableBodyProps<TData> {
     renderTopBorder?: boolean;
 }
-export declare class TableBody extends React.PureComponent<InternalBodyProps> {
-    render(): JSX.Element[];
-}
+export declare const TableBody: <TData = unknown>(props: InternalBodyProps<TData>) => JSX.Element;
 export {};

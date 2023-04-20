@@ -1,15 +1,15 @@
-import * as React from "react";
-import { TableBorder } from "./TableCell";
-import { TableBodyProps } from "./TableBody";
-export interface TableRowProps extends TableBorder {
+/// <reference types="react" />
+import { DataTableCellProps } from 'DataTableCell';
+import { TypedReactNode } from 'Types';
+import { TableBorder, TableCellProps } from './TableCell';
+export interface TableRowProps<TData> extends TableBorder {
     fontSize?: number | string;
-    textAlign?: "left" | "center" | "right";
-    data?: any;
+    textAlign?: 'left' | 'center' | 'right';
+    data?: TData;
     zebra?: boolean;
     even?: boolean;
     evenRowColor?: string;
     oddRowColor?: string;
+    children?: TypedReactNode<TableCellProps | DataTableCellProps<TData>>;
 }
-export declare class TableRow extends React.PureComponent<Partial<TableBodyProps>> {
-    render(): JSX.Element;
-}
+export declare const TableRow: <TData>(props: TableRowProps<TData>) => JSX.Element;

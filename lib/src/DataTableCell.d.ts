@@ -1,10 +1,7 @@
-import * as React from "react";
-import { TableCellProps } from "./TableCell";
-interface DataTableCellProps extends TableCellProps {
-    data?: any;
-    getContent: (data: any) => React.ReactNode | JSX.Element | string | number;
+import * as React from 'react';
+import { TableCellProps } from './TableCell';
+export interface DataTableCellProps<TData> extends TableCellProps {
+    data?: TData;
+    getContent: (data: TData) => React.ReactNode | JSX.Element | string | number;
 }
-export declare class DataTableCell extends React.PureComponent<DataTableCellProps> {
-    render(): JSX.Element;
-}
-export {};
+export declare const DataTableCell: <TData = unknown>(props: DataTableCellProps<TData>) => JSX.Element;

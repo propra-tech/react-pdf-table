@@ -38,7 +38,7 @@ Re-exported here to avoid adding a peer dependency on @react-pdf/types
 
 #### Defined in
 
-[src/Types.ts:6](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Types.ts#L6)
+[src/Types.ts:6](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Types.ts#L6)
 
 ___
 
@@ -56,7 +56,7 @@ Allows stricter typing for child elements
 
 #### Defined in
 
-[src/Types.ts:11](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Types.ts#L11)
+[src/Types.ts:11](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Types.ts#L11)
 
 ## Functions
 
@@ -84,7 +84,7 @@ This component is used to display data in the the {@see TableRow} component.
 
 #### Defined in
 
-[src/DataTableCell.tsx:20](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/DataTableCell.tsx#L20)
+[src/DataTableCell.tsx:20](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/DataTableCell.tsx#L20)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:16](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L16)
+[src/Table.tsx:16](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Table.tsx#L16)
 
 ___
 
@@ -132,7 +132,7 @@ This component displays the data as {@see TableRow}s.
 
 #### Defined in
 
-[src/TableBody.tsx:26](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableBody.tsx#L26)
+[src/TableBody.tsx:26](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/TableBody.tsx#L26)
 
 ___
 
@@ -201,7 +201,7 @@ If the value is undefined then return true for that border.
 
 #### Defined in
 
-[src/Utils.ts:9](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Utils.ts#L9)
+[src/Utils.ts:9](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Utils.ts#L9)
 
 ___
 
@@ -232,4 +232,4 @@ an array of items or an empty array.
 
 #### Defined in
 
-[src/Utils.ts:25](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Utils.ts#L25)
+[src/Utils.ts:25](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Utils.ts#L25)

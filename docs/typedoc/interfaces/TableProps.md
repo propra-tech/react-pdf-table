@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/Table.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L13)
+[src/Table.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Table.tsx#L13)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:8](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L8)
+[src/Table.tsx:8](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Table.tsx#L8)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:10](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L10)
+[src/Table.tsx:10](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Table.tsx#L10)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:11](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L11)
+[src/Table.tsx:11](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Table.tsx#L11)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:12](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L12)
+[src/Table.tsx:12](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Table.tsx#L12)
 
 ___
 
@@ -71,4 +71,4 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:9](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L9)
+[src/Table.tsx:9](https://github.com/propra-tech/react-pdf-table/blob/f4d2620/src/Table.tsx#L9)
