@@ -120,20 +120,20 @@ This example will render a header and one row using the default styling.
 
 To run the storybook:
 ```
-yarn storybook
+pnpm storybook
 ```
 
 Compile to typescript: 
 ```
-yarn recompile
+pnpm recompile
 ```
 
 Build (Clean & Compile):
 ```
-yarn build
+pnpm build
 ```
 
 Run tests:
 ```
-yarn test
+pnpm test
 ```
