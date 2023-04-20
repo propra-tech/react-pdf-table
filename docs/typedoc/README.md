@@ -1,3 +1,5 @@
+@propra/react-pdf-table / [Exports](modules.md)
+
 # @propra/react-pdf-table
 
 This library is a fork of the excellent work by David Kucsai (`@dmk99`)and other contributors, designed to be used with [@react-pdf/renderer](https://www.npmjs.com/package/@react-pdf/renderer).
