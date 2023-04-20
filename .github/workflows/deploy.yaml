@@ -23,6 +23,11 @@ jobs:
       with:
         version: latest
 
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'pnpm'
+
     - name: Checkout if required
       if: ${{ inputs.checkout == 'true' }}
       uses: actions/checkout@v3
