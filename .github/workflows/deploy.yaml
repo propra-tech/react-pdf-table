@@ -35,10 +35,8 @@ jobs:
     - name: build
       shell: bash
       run: |
-        echo "::group::Build"
         pnpm install
         pnpm build-storybook
-        echo "::endgroup::"
 
     - name: upload
       uses: actions/upload-pages-artifact@v1.0.4
