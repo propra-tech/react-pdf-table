@@ -10,17 +10,18 @@
 - [data](TableProps.md#data)
 - [evenRowColor](TableProps.md#evenrowcolor)
 - [oddRowColor](TableProps.md#oddrowcolor)
+- [topBorderWhenNoHeader](TableProps.md#topborderwhennoheader)
 - [zebra](TableProps.md#zebra)
 
 ## Properties
 
 ### children
 
-• `Optional` **children**: `ReactNode`
+• `Optional` **children**: [`TypedReactNode`](../modules.md#typedreactnode)<`FC`<[`TableHeaderProps`](TableHeaderProps.md)\>\> \| [`TypedReactNode`](../modules.md#typedreactnode)<<TData\>(`props`: `InternalBodyProps`<`TData`\>) => `Element`\>
 
 #### Defined in
 
-[src/Table.tsx:11](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/Table.tsx#L11)
+[src/Table.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L13)
 
 ___
 
@@ -30,7 +31,7 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:7](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/Table.tsx#L7)
+[src/Table.tsx:8](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L8)
 
 ___
 
@@ -40,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:9](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/Table.tsx#L9)
+[src/Table.tsx:10](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L10)
 
 ___
 
@@ -50,7 +51,17 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:10](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/Table.tsx#L10)
+[src/Table.tsx:11](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L11)
+
+___
+
+### topBorderWhenNoHeader
+
+• `Optional` **topBorderWhenNoHeader**: `boolean`
+
+#### Defined in
+
+[src/Table.tsx:12](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L12)
 
 ___
 
@@ -60,4 +71,4 @@ ___
 
 #### Defined in
 
-[src/Table.tsx:8](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/Table.tsx#L8)
+[src/Table.tsx:9](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L9)

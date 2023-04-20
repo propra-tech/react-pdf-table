@@ -9,6 +9,8 @@ Depending on the context some toggles will not have any effect.
 
 - [`TableBorder`](TableBorder.md)
 
+- `PropsWithChildren`
+
   ↳ **`TableCellProps`**
 
   ↳↳ [`DataTableCellProps`](DataTableCellProps.md)
@@ -34,9 +36,13 @@ Depending on the context some toggles will not have any effect.
 
 • `Optional` **children**: `ReactNode`
 
+#### Inherited from
+
+React.PropsWithChildren.children
+
 #### Defined in
 
-[src/TableCell.tsx:57](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L57)
+node_modules/.pnpm/@types+react@18.0.37/node_modules/@types/react/ts5.0/index.d.ts:778
 
 ___
 
@@ -48,7 +54,7 @@ The font-size to apply to the cell.
 
 #### Defined in
 
-[src/TableCell.tsx:56](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L56)
+[src/TableCell.tsx:56](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L56)
 
 ___
 
@@ -64,7 +70,7 @@ Include the bottom border. Default true.
 
 #### Defined in
 
-[src/TableCell.tsx:23](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L23)
+[src/TableCell.tsx:23](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L23)
 
 ___
 
@@ -80,7 +86,7 @@ Include the left border. Default true.
 
 #### Defined in
 
-[src/TableCell.tsx:28](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L28)
+[src/TableCell.tsx:28](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L28)
 
 ___
 
@@ -96,7 +102,7 @@ Include the right border. Default true.
 
 #### Defined in
 
-[src/TableCell.tsx:18](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L18)
+[src/TableCell.tsx:18](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L18)
 
 ___
 
@@ -112,7 +118,7 @@ Include the top border. Default true.
 
 #### Defined in
 
-[src/TableCell.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L13)
+[src/TableCell.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L13)
 
 ___
 
@@ -124,7 +130,7 @@ Whether this is a header cell or not. If not defined it will be false.
 
 #### Defined in
 
-[src/TableCell.tsx:51](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L51)
+[src/TableCell.tsx:51](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L51)
 
 ___
 
@@ -136,7 +142,7 @@ Extra styling to apply. These will override existing style with the same key.
 
 #### Defined in
 
-[src/TableCell.tsx:41](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L41)
+[src/TableCell.tsx:41](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L41)
 
 ___
 
@@ -148,7 +154,7 @@ How to align the text
 
 #### Defined in
 
-[src/TableCell.tsx:46](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L46)
+[src/TableCell.tsx:46](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L46)
 
 ___
 
@@ -161,4 +167,4 @@ This value is between 0..1, if not specified 1 is assumed, this will take up the
 
 #### Defined in
 
-[src/TableCell.tsx:36](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/TableCell.tsx#L36)
+[src/TableCell.tsx:36](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableCell.tsx#L36)

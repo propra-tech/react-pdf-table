@@ -10,11 +10,13 @@
 - [TableBodyProps](interfaces/TableBodyProps.md)
 - [TableBorder](interfaces/TableBorder.md)
 - [TableCellProps](interfaces/TableCellProps.md)
+- [TableHeaderProps](interfaces/TableHeaderProps.md)
 - [TableProps](interfaces/TableProps.md)
 
 ### Type Aliases
 
 - [Style](modules.md#style)
+- [TypedReactNode](modules.md#typedreactnode)
 
 ### Functions
 
@@ -36,74 +38,101 @@ Re-exported here to avoid adding a peer dependency on @react-pdf/types
 
 #### Defined in
 
-[src/Types.ts:6](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/Types.ts#L6)
+[src/Types.ts:6](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Types.ts#L6)
+
+___
+
+### TypedReactNode
+
+Ƭ **TypedReactNode**<`T`\>: `React.ReactElement`<`T`\> \| [`TypedReactNode`](modules.md#typedreactnode)<`T`\>[] \| ``null`` \| `undefined`
+
+Allows stricter typing for child elements
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Defined in
+
+[src/Types.ts:11](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Types.ts#L11)
 
 ## Functions
 
 ### DataTableCell
 
-▸ **DataTableCell**(`props`, `context?`): `ReactElement`<`any`, `any`\>
+▸ **DataTableCell**<`TData`\>(`props`): `Element`
 
 This component is used to display data in the the {@see TableRow} component.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `TData` | `unknown` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | [`DataTableCellProps`](interfaces/DataTableCellProps.md) |
-| `context?` | `any` |
+| `props` | [`DataTableCellProps`](interfaces/DataTableCellProps.md)<`TData`\> |
 
 #### Returns
 
-`ReactElement`<`any`, `any`\>
+`Element`
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@18.0.37/node_modules/@types/react/ts5.0/index.d.ts:499
+[src/DataTableCell.tsx:20](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/DataTableCell.tsx#L20)
 
 ___
 
 ### Table
 
-▸ **Table**(`props`, `context?`): `ReactElement`<`any`, `any`\>
+▸ **Table**(`props`): `Element`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `props` | [`TableProps`](interfaces/TableProps.md) |
-| `context?` | `any` |
 
 #### Returns
 
-`ReactElement`<`any`, `any`\>
+`Element`
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@18.0.37/node_modules/@types/react/ts5.0/index.d.ts:499
+[src/Table.tsx:16](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Table.tsx#L16)
 
 ___
 
 ### TableBody
 
-▸ **TableBody**(`props`, `context?`): `ReactElement`<`any`, `any`\>
+▸ **TableBody**<`TData`\>(`props`): `Element`
 
 This component displays the data as {@see TableRow}s.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `TData` | `unknown` |
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `props` | `InternalBodyProps` |
-| `context?` | `any` |
+| `props` | `InternalBodyProps`<`TData`\> |
 
 #### Returns
 
-`ReactElement`<`any`, `any`\>
+`Element`
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@18.0.37/node_modules/@types/react/ts5.0/index.d.ts:499
+[src/TableBody.tsx:26](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableBody.tsx#L26)
 
 ___
 
@@ -140,7 +169,7 @@ This component displays the titles for the rows.
 
 | Name | Type |
 | :------ | :------ |
-| `props` | `TableHeaderProps` |
+| `props` | [`TableHeaderProps`](interfaces/TableHeaderProps.md) |
 | `context?` | `any` |
 
 #### Returns
@@ -172,7 +201,7 @@ If the value is undefined then return true for that border.
 
 #### Defined in
 
-[src/Utils.ts:9](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/Utils.ts#L9)
+[src/Utils.ts:9](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Utils.ts#L9)
 
 ___
 
@@ -203,4 +232,4 @@ an array of items or an empty array.
 
 #### Defined in
 
-[src/Utils.ts:25](https://github.com/propra-tech/react-pdf-table/blob/2c0f79d/src/Utils.ts#L25)
+[src/Utils.ts:25](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/Utils.ts#L25)

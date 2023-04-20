@@ -1,61 +1,40 @@
-[@propra/react-pdf-table](../README.md) / [Exports](../modules.md) / TableBodyProps
+[@propra/react-pdf-table](../README.md) / [Exports](../modules.md) / TableHeaderProps
 
-# Interface: TableBodyProps<TData\>
-
-## Type parameters
-
-| Name |
-| :------ |
-| `TData` |
+# Interface: TableHeaderProps
 
 ## Hierarchy
 
-- `Omit`<`TableRowProps`<`TData`\>, ``"data"``\>
+- `Omit`<`TableRowProps`<`never`\>, ``"children"`` \| ``"data"``\>
 
-  ↳ **`TableBodyProps`**
+  ↳ **`TableHeaderProps`**
 
 ## Table of contents
 
 ### Properties
 
-- [children](TableBodyProps.md#children)
-- [data](TableBodyProps.md#data)
-- [even](TableBodyProps.md#even)
-- [evenRowColor](TableBodyProps.md#evenrowcolor)
-- [fontSize](TableBodyProps.md#fontsize)
-- [includeBottomBorder](TableBodyProps.md#includebottomborder)
-- [includeLeftBorder](TableBodyProps.md#includeleftborder)
-- [includeRightBorder](TableBodyProps.md#includerightborder)
-- [includeTopBorder](TableBodyProps.md#includetopborder)
-- [oddRowColor](TableBodyProps.md#oddrowcolor)
-- [textAlign](TableBodyProps.md#textalign)
-- [zebra](TableBodyProps.md#zebra)
+- [children](TableHeaderProps.md#children)
+- [even](TableHeaderProps.md#even)
+- [evenRowColor](TableHeaderProps.md#evenrowcolor)
+- [fontSize](TableHeaderProps.md#fontsize)
+- [includeBottomBorder](TableHeaderProps.md#includebottomborder)
+- [includeLeftBorder](TableHeaderProps.md#includeleftborder)
+- [includeRightBorder](TableHeaderProps.md#includerightborder)
+- [includeTopBorder](TableHeaderProps.md#includetopborder)
+- [oddRowColor](TableHeaderProps.md#oddrowcolor)
+- [textAlign](TableHeaderProps.md#textalign)
+- [zebra](TableHeaderProps.md#zebra)
 
 ## Properties
 
 ### children
 
-• `Optional` **children**: [`TypedReactNode`](../modules.md#typedreactnode)<[`DataTableCellProps`](DataTableCellProps.md)<`TData`\>\>
+• `Optional` **children**: [`TypedReactNode`](../modules.md#typedreactnode)<[`TableCellProps`](TableCellProps.md)\>
 
-#### Overrides
-
-Omit.children
+Only {@see TableCell} elements are valid children
 
 #### Defined in
 
-[src/TableBody.tsx:13](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableBody.tsx#L13)
-
-___
-
-### data
-
-• `Optional` **data**: `TData`[]
-
-The data associated with the table.
-
-#### Defined in
-
-[src/TableBody.tsx:11](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableBody.tsx#L11)
+[src/TableHeader.tsx:11](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableHeader.tsx#L11)
 
 ___
 
@@ -207,10 +186,12 @@ ___
 
 • `Optional` **zebra**: `boolean`
 
-#### Overrides
+Whether rows have alternating styles
+
+#### Inherited from
 
 Omit.zebra
 
 #### Defined in
 
-[src/TableBody.tsx:12](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableBody.tsx#L12)
+[src/TableRow.tsx:27](https://github.com/propra-tech/react-pdf-table/blob/65981e2/src/TableRow.tsx#L27)

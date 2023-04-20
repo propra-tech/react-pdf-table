@@ -2,12 +2,38 @@ import { faker } from '@faker-js/faker';
 import { Document, PDFViewer, Page } from '@react-pdf/renderer';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { DataTableCell, DataTableCellProps, Table, TableBody, TableBodyProps, TableCell, TableHeader, TableProps } from '../src';
+import {
+  DataTableCell,
+  DataTableCellProps,
+  Table,
+  TableBody,
+  TableBodyProps,
+  TableCell,
+  TableHeader,
+  TableHeaderProps,
+  TableProps,
+  TypedReactNode,
+} from '../src';
 
 const pageSize = ['A2', 'A3', 'A4', 'A5', 'A6', 'LEGAL', 'LETTER', 'TABLOID'];
 
+type Human = {
+  firstName: string;
+  lastName: string;
+  dob: string;
+  country: string;
+  city: string;
+  phoneNumber?: string;
+  randomValues?: {
+    one: number;
+    two: number;
+    three: number;
+    four: number;
+  };
+};
+
 type MetaProps = TableProps & {
-  getLastContent: DataTableCellProps['getContent'];
+  getLastContent: DataTableCellProps<Human>['getContent'];
   orientation: 'landscape' | 'portrait';
   pageSize: React.ComponentProps<typeof Page>['size'];
   firstColumnWeighting: number;
@@ -15,7 +41,8 @@ type MetaProps = TableProps & {
   fontSize: number;
   textAlign: 'left' | 'center' | 'right';
   showHeader: boolean;
-} & Pick<TableBodyProps, 'includeTopBorder' | 'includeBottomBorder' | 'includeLeftBorder' | 'includeRightBorder'>;
+  customHeader?: TypedReactNode<React.FC<TableHeaderProps>>;
+} & Pick<TableBodyProps<Human>, 'includeTopBorder' | 'includeBottomBorder' | 'includeLeftBorder' | 'includeRightBorder'>;
 type Story = StoryObj<MetaProps>;
 
 const Template = ({
@@ -31,6 +58,7 @@ const Template = ({
   includeLeftBorder,
   includeRightBorder,
   showHeader = true,
+  customHeader,
   ...args
 }: MetaProps) => {
   const bodyProps = {
@@ -46,7 +74,8 @@ const Template = ({
       <Document>
         <Page orientation={orientation} size={pageSize ?? 'A4'} style={{ margin: 20, paddingRight: 40 }}>
           <Table {...args}>
-            {showHeader && (
+            {customHeader}
+            {showHeader && !customHeader && (
               <TableHeader {...bodyProps}>
                 <TableCell weighting={firstColumnWeighting}>First Name</TableCell>
                 <TableCell weighting={secondColumnWeighting}>Last Name</TableCell>
@@ -55,12 +84,12 @@ const Template = ({
                 <TableCell>Phone Number</TableCell>
               </TableHeader>
             )}
-            <TableBody {...bodyProps}>
-              <DataTableCell weighting={firstColumnWeighting} getContent={(r) => r.firstName} />
-              <DataTableCell weighting={secondColumnWeighting} getContent={(r) => r.lastName} />
-              <DataTableCell getContent={(r) => r.dob} />
-              <DataTableCell getContent={(r) => r.country} />
-              <DataTableCell getContent={getLastContent} />
+            <TableBody<Human> {...bodyProps}>
+              <DataTableCell<Human> weighting={firstColumnWeighting} getContent={(r) => r.firstName} />
+              <DataTableCell<Human> weighting={secondColumnWeighting} getContent={(r) => r.lastName} />
+              <DataTableCell<Human> getContent={(r) => r.dob} />
+              <DataTableCell<Human> getContent={(r) => r.country} />
+              <DataTableCell<Human> getContent={getLastContent} />
             </TableBody>
           </Table>
         </Page>
@@ -75,7 +104,7 @@ const meta: Meta = {
   parameters: {
     controls: {
       expanded: true,
-      exclude: ['children', 'getLastContent'],
+      exclude: ['children', 'getLastContent', 'customHeader'],
     },
   },
   args: {
@@ -130,8 +159,31 @@ NestedTables.args = {
         four: Math.ceil(Math.random() * 100),
       },
     })),
+  customHeader: (
+    <TableHeader>
+      <TableCell>First Name</TableCell>
+      <TableCell>Last Name</TableCell>
+      <TableCell>DOB</TableCell>
+      <TableCell>Country</TableCell>
+      <TableCell>
+        <TableHeader
+          fontSize={8}
+          textAlign={'center'}
+          includeTopBorder={false}
+          includeBottomBorder={false}
+          includeLeftBorder={false}
+          includeRightBorder={false}
+        >
+          <TableCell>One</TableCell>
+          <TableCell>Two</TableCell>
+          <TableCell>Three</TableCell>
+          <TableCell>Four</TableCell>
+        </TableHeader>
+      </TableCell>
+    </TableHeader>
+  ),
   getLastContent: (r) => (
-    <Table data={[r]}>
+    <Table data={[r]} topBorderWhenNoHeader={false}>
       <TableBody
         textAlign={'center'}
         includeTopBorder={false}
@@ -139,10 +191,10 @@ NestedTables.args = {
         includeLeftBorder={false}
         includeRightBorder={false}
       >
-        <DataTableCell getContent={(r) => r.randomValues.one} />
-        <DataTableCell getContent={(r) => r.randomValues.two} />
-        <DataTableCell getContent={(r) => r.randomValues.three} />
-        <DataTableCell getContent={(r) => r.randomValues.four} />
+        <DataTableCell<Human> getContent={(r) => r.randomValues?.one} />
+        <DataTableCell<Human> getContent={(r) => r.randomValues?.two} />
+        <DataTableCell<Human> getContent={(r) => r.randomValues?.three} />
+        <DataTableCell<Human> getContent={(r) => r.randomValues?.four} />
       </TableBody>
     </Table>
   ),
@@ -161,7 +213,8 @@ SimpleTableWithWeighting.args = {
       phoneNumber: faker.phone.number(),
     })),
   getLastContent: (r) => r.phoneNumber,
-  firstColumnWeighting: 0.2,
+  firstColumnWeighting: 0.3,
+  secondColumnWeighting: 0.3,
 };
 SimpleTableWithWeighting.argTypes = {
   firstColumnWeighting: {
@@ -198,6 +251,7 @@ TableWithoutBorder.args = {
   includeBottomBorder: false,
   includeLeftBorder: false,
   includeRightBorder: false,
+  topBorderWhenNoHeader: false,
 };
 TableWithoutBorder.parameters = {
   controls: {
@@ -210,6 +264,7 @@ TableWithoutBorder.parameters = {
       'includeBottomBorder',
       'includeLeftBorder',
       'includeRightBorder',
+      'topBorderWhenNoHeader',
     ],
   },
 };

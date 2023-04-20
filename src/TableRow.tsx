@@ -1,11 +1,11 @@
 import { View } from '@react-pdf/renderer';
 import { DataTableCellProps } from 'DataTableCell';
+import { TypedReactNode } from 'Types';
 import * as React from 'react';
-import { TableBodyProps } from './TableBody';
-import { TableBorder } from './TableCell';
+import { TableBorder, TableCellProps } from './TableCell';
 import { getDefaultBorderIncludes } from './Utils';
 
-export interface TableRowProps extends TableBorder {
+export interface TableRowProps<TData> extends TableBorder {
   /**
    * The font size as a valid unit defined in react-pdf.
    */
@@ -19,7 +19,7 @@ export interface TableRowProps extends TableBorder {
   /**
    * Any data associated, relevant if the parent is a {@see DataTableCell}.
    */
-  data?: any;
+  data?: TData;
 
   /**
    * Whether rows have alternating styles
@@ -40,12 +40,17 @@ export interface TableRowProps extends TableBorder {
    * Specify the color of odd rows
    */
   oddRowColor?: string;
+
+  /**
+   * Only {@see DataTableCell} or {@see TableCell} elements are valid children
+   */
+  children?: TypedReactNode<TableCellProps | DataTableCellProps<TData>>;
 }
 
 /**
  * This component describes how to display a row.
  */
-export const TableRow: React.FC<Partial<TableBodyProps>> = (props: Partial<TableBodyProps>) => {
+export const TableRow = <TData,>(props: TableRowProps<TData>) => {
   const rowCells = React.Children.toArray(props.children);
   const { includeLeftBorder, includeBottomBorder, includeRightBorder, includeTopBorder } = getDefaultBorderIncludes(props);
 
@@ -69,7 +74,6 @@ export const TableRow: React.FC<Partial<TableBodyProps>> = (props: Partial<Table
 
   return (
     <View
-      // @ts-ignore
       style={{
         borderBottom: includeBottomBorder && '1pt solid black',
         borderRight: includeRightBorder && '1pt solid black',
@@ -80,18 +84,19 @@ export const TableRow: React.FC<Partial<TableBodyProps>> = (props: Partial<Table
         flexDirection: 'row',
         justifyContent: 'space-between',
         backgroundColor: rowColor,
+        marginTop: -1,
       }}
     >
       {React.Children.map(props.children, (rc, columnIndex) =>
-        React.isValidElement<DataTableCellProps>(rc)
+        React.isValidElement(rc)
           ? React.cloneElement(rc, {
               weighting: rc.props.weighting ?? weightingsPerNotSpecified,
-              data: props.data,
+              ...(props.data && { data: props.data as TData }),
               key: columnIndex,
               fontSize: props.fontSize,
               textAlign: props.textAlign,
-              includeLeftBorder: columnIndex === 0,
-              includeRightBorder: columnIndex !== rowCells.length - 1,
+              includeLeftBorder: includeLeftBorder && columnIndex === 0,
+              includeRightBorder: includeRightBorder && columnIndex !== rowCells.length - 1,
             })
           : null
       )}

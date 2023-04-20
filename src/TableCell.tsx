@@ -28,7 +28,7 @@ export interface TableBorder {
   includeLeftBorder?: boolean;
 }
 
-export interface TableCellProps extends TableBorder {
+export interface TableCellProps extends TableBorder, React.PropsWithChildren {
   /**
    * The weighting of a cell based on the flex layout style.
    * This value is between 0..1, if not specified 1 is assumed, this will take up the remaining available space.
@@ -54,14 +54,13 @@ export interface TableCellProps extends TableBorder {
    * The font-size to apply to the cell.
    */
   fontSize?: number | string;
-  children?: React.ReactNode;
 }
 
 /**
  * This component displays the associated content of it's children.
  */
 export const TableCell: React.FC<TableCellProps> = (props: TableCellProps) => {
-  let content: any;
+  let content: TableCellProps['children'];
 
   if (typeof props.children === 'string') {
     content = <Text>{props.children}</Text>;
@@ -81,6 +80,7 @@ export const TableCell: React.FC<TableCellProps> = (props: TableCellProps) => {
     borderRight: includeRightBorder && '1pt solid black',
     wordWrap: 'break-word',
     whiteSpace: 'pre-wrap',
+    overflow: 'hidden',
   };
 
   const mergedStyles: Style[] = [defaultStyle, ...transformToArray(props.style)];

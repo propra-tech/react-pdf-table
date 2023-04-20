@@ -17,7 +17,7 @@ To get started run:
 
 ## Documentation
 
-Refer to [API Documentation](https://github.com/propra-tech/react-pdf-table/tree/master/docs/typedoc/README.md) for the type definitions.
+Refer to [API Documentation](https://github.com/propra-tech/react-pdf-table/tree/master/docs/typedoc/modules.md) for the type definitions.
 
 ### Notes
 

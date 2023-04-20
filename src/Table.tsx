@@ -1,4 +1,5 @@
 import { View } from '@react-pdf/renderer';
+import { TypedReactNode } from 'Types';
 import * as React from 'react';
 import { TableBody } from './TableBody';
 import { TableHeader } from './TableHeader';
@@ -8,24 +9,27 @@ export interface TableProps {
   zebra?: boolean;
   evenRowColor?: string;
   oddRowColor?: string;
-  children?: React.ReactNode;
+  topBorderWhenNoHeader?: boolean;
+  children?: TypedReactNode<typeof TableHeader> | TypedReactNode<typeof TableBody>;
 }
 
-export const Table: React.FC<TableProps> = (props) => {
+export const Table = (props: TableProps) => {
   let tableHeader: JSX.Element = null;
   let tableBody: JSX.Element = null;
 
   React.Children.forEach(props.children, (c: any) => {
-    if (c?.type === TableHeader) {
-      tableHeader = c;
-    } else if (c?.type === TableBody) {
-      tableBody = c;
+    if (React.isValidElement(c)) {
+      if (c?.type === TableHeader) {
+        tableHeader = c;
+      } else if (c?.type === TableBody) {
+        tableBody = c;
+      }
     }
   });
 
   tableBody = React.cloneElement(tableBody, {
     data: tableBody.props.data ?? props.data ?? [],
-    renderTopBorder: !tableHeader,
+    renderTopBorder: !tableHeader && (props.topBorderWhenNoHeader ?? true),
     zebra: tableBody.props.zebra ?? props.zebra ?? false,
     evenRowColor: tableBody.props.evenRowColor ?? props.evenRowColor ?? '',
     oddRowColor: tableBody.props.oddRowColor ?? props.oddRowColor ?? '',

@@ -1,9 +1,15 @@
 import { TableCellProps } from 'TableCell';
+import { TypedReactNode } from 'Types';
 import * as React from 'react';
 import { TableRow, TableRowProps } from './TableRow';
 import { getDefaultBorderIncludes } from './Utils';
 
-interface TableHeaderProps extends TableRowProps, React.PropsWithChildren {}
+export interface TableHeaderProps extends Omit<TableRowProps<never>, 'children' | 'data'> {
+  /**
+   * Only {@see TableCell} elements are valid children
+   */
+  children?: TypedReactNode<TableCellProps>;
+}
 
 /**
  * This component displays the titles for the rows.
@@ -13,7 +19,7 @@ export const TableHeader: React.FC<TableHeaderProps> = (props: TableHeaderProps)
   const childrenCount = React.Children.count(props.children);
 
   return (
-    <TableRow
+    <TableRow<never>
       {...props}
       key={'header'}
       includeLeftBorder={includeLeftBorder}
